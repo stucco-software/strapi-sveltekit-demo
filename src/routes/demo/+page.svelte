@@ -3,12 +3,14 @@
   import Chapters from "$lib/Chapters.svelte"
   import Events from "$lib/Events.svelte"
   import { setSession } from "$lib/session.svelte.js"
+
   const {data, form} = $props()
+
+  console.log(form)
   if (form) {
     setSession(form)
   }
-  console.log(data)
-  console.log(form)
+
 </script>
 
 <div class="grid">

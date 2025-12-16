@@ -12,13 +12,33 @@
   <div class="window-pane">
 
     <h3>All Chapters</h3>
-    <ul>
       {#each chapters as chapter}
-        <li>
-          {chapter.Title}
-        </li>
+          <details>
+            <summary>
+              {chapter.Title}
+            </summary>
+            <h4>Board</h4>
+            <ul>
+              {#each chapter.board as member}
+                <li>{member.username}</li>
+              {/each}
+            </ul>
+
+            <h4>Leadership</h4>
+            <ul>
+              {#each chapter.leadership as member}
+                <li>{member.username}</li>
+              {/each}
+            </ul>
+
+            <h4>Members</h4>
+            <ul>
+              {#each chapter.members as member}
+                <li>{member.username}</li>
+              {/each}
+            </ul>
+          </details>
       {/each}
-    </ul>
 
     {#if clientSession.data}
       <button class="btn">Create Chapter</button>
@@ -30,6 +50,9 @@
   dialog {
     border: none;
     background: none;
+  }
+  details {
+    margin-block-end: 1rem;
   }
   .chapters {
     grid-column: 4/13;

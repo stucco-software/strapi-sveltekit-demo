@@ -1,5 +1,6 @@
 <script>
   import { clientSession } from "$lib/session.svelte.js"
+  import CreateEvent from "$lib/CreateEvent.svelte"
   const { events } = $props()
 </script>
 
@@ -20,7 +21,7 @@
       {/each}
     </ul>
     {#if clientSession.data}
-      <button class="btn">Create Event</button>
+      <CreateEvent />
     {/if}
   </div>
 </div>

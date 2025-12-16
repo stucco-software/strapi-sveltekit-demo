@@ -13,6 +13,7 @@
   const showCreate = (e) => {
     create.showModal()
   }
+
 </script>
 
 <div class="window members">
@@ -25,7 +26,7 @@
   {#if clientSession.data}
     <div class="window-pane">
       <p>
-        You are currently <b>Logged In</b> as <b>{clientSession.data.user.username}</b>.
+        You are currently <b>Logged In</b> as <b>{clientSession.data?.user?.username}</b>. You are a member of the <b>{clientSession.data?.user?.memberOf[0].Title}</b> chapter.
       </p>
     </div>
   {:else}
